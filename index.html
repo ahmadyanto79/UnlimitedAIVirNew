@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Premium Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div id="licenseModal" class="modal">
+        <div class="modal-content">
+            <h2>🔑 Masukkan Lisensi Premium</h2>
+            <p>Anda wajib memiliki lisensi dari admin untuk mengakses AI.</p>
+            <input type="text" id="licenseInput" placeholder="Contoh: PREM-XXXXXXXX">
+            <button onclick="verifyLicense()">Masuk</button>
+            <p id="licenseError" style="color: #ff6b6b; display: none; margin-top: 10px;">Lisensi tidak valid!</p>
+        </div>
+    </div>
+
+    <div class="app-container" id="appContainer" style="display: none;">
+        <div class="sidebar">
+            <h2>AI Chat <span>PRO</span></h2>
+            <button class="new-chat" onclick="location.reload()">+ Chat Baru</button>
+            <div class="license-info">Status: <span style="color:#4caf50">Premium</span></div>
+        </div>
+        
+        <div class="main-chat">
+            <div class="chat-box" id="chatBox">
+                <div class="message ai">
+                    <div class="avatar">🤖</div>
+                    <div class="content">Halo! Saya siap membantu Anda. Silakan ketik pertanyaan Anda.</div>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <textarea id="promptInput" placeholder="Kirim pesan ke AI..." rows="1"></textarea>
+                    <button onclick="sendMessage()" id="sendBtn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
